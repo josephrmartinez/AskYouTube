@@ -1,7 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from youtube_transcript_api import YouTubeTranscriptApi
-from pytube import YouTube
 from pydantic import BaseModel
 import os
 from decouple import config
