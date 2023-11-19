@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "youtube reader",
-  "version": "1.41",
-  "description": "video to blog",
+  "name": "AskYouTube",
+  "version": "0.1",
+  "description": "Perform any task on a YouTube video",
   "icons": {
-    "16": "images/icon-16.png",
-    "32": "images/icon-32.png",
-    "48": "images/icon-48.png",
-    "96": "images/icon-96.png"
+    "16": "images/chat16.png",
+    "32": "images/chat32.png",
+    "48": "images/chat48.png",
+    "96": "images/chat96.png"
   },
   "permissions": [
     "activeTab", "storage", "tabs"
@@ -15,15 +15,9 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/icon-16.png",
-      "48": "images/icon-48.png",
-      "96": "images/icon-96.png"
+      "16": "images/chat16.png",
+      "48": "images/chat48.png",
+      "96": "images/chat96.png"
     }
-  },
-  "content_scripts": [
-    {
-      "js": ["scripts/content.js"],
-      "matches": ["*://*.youtube.com/*"]
-    }
-  ]
+  }
 }
