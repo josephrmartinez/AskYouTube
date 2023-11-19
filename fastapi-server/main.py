@@ -23,6 +23,7 @@ class TaskRequestData(BaseModel):
     url: str
     task: str
 
+# Function to count the number of tokens in a given text. Uses gpt 3.5 embedding model
 def count_tokens(text: str):
     encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
     num_tokens = len(encoding.encode(text))
@@ -48,17 +49,17 @@ async def perform_task(request_data: TaskRequestData):
     # Get the YouTube transcript
     transcript = get_youtube_transcript(url)
 
-    # Declare model variable with gpt-3.5-turbo-1106 as default
+    # Declare model variable with gpt-3.5-turbo-1106 as default (16k token context window)
     model = "gpt-3.5-turbo-1106"
 
     # Count the tokens taken by just the transcript
     token_count = count_tokens(transcript)
 
-    # Switch to gpt-4-1106-preview model for longer transcripts
+    # Switch to gpt-4-1106-preview model for transcripts over 10k tokens (leaves room for up to 6k output and prompt overhead tokens)
     if token_count > 10000:
         model = "gpt-4-1106-preview"
 
-    # Get OpenAI API key
+    # Get OpenAI API key from 
     openai.api_key = config('OPENAI_API_KEY')
 
     messages = [
