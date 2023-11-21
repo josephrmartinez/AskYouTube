@@ -23,17 +23,17 @@ Watch the demo video here:
 
 ```allow_origins=["chrome-extension://PASTE_ID_HERE"],  # Use correct extension ID```
 
-- Save the file.
+- Save the main.py file.
 
-- Create a virtual environment inside the fastapi-server folder, activate it, and install dependencies:
+- Navigate to the fastapi-server folder. Create a virtual environment inside the fastapi-server folder, activate it, and install dependencies:
 ```
 python3 -m venv venv
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-4. Deploying
-- To use the extension locally, start the FastAPI server. Ensure your server is running for the extension to send requests to the API.
+4. Use the extension
+- To use the extension locally, you will need to first start the FastAPI server. Ensure the server is running for the extension to send requests to the API.
 
 - For regular use, consider deploying the FastAPI server and updating the code to securely access your API endpoint.
 
