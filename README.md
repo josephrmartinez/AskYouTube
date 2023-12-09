@@ -5,6 +5,18 @@ A simple Chrome extension that enables users to leverage the OpenAI Chat Complet
     <img width="33%" src="/askyoutube.png">
 </p>
 
+This extension simply pulls down a transcript for the video you are currently viewing and sends this to the OpenAI API with your task request. 
+
+"Generate a vegetarian version of this recipe."
+
+"Extract the materials list for this project."
+
+"What was the book they recommended?"
+
+This extension does **not** use a speech to text model to transcribe the video or an image recognition model to actually pass along information about what took place in the video. Automatically generated YouTube transcripts are not great quality, but they tend to be totally fine for the lightweight use cases when you just have a simple question on a video.  
+
+gpt-3.5-turbo-1106 with the 16k token context window is used by default for videos under about ten minutes. For longer videos, the gpt-4-1106-preview model with a 128k context window is automatically selected. You should be able to use this for videos of to about four hours in length, but this is highly dependent on the volume of dialogue. 
+
 
 ## Demo Video
 
