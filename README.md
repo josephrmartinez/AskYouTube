@@ -1,8 +1,10 @@
 ## AskYouTube
 A simple Chrome extension that enables users to leverage the OpenAI Chat Completions endpoint on any YouTube video.
 
+[![AskYouTube image](/askyoutube.png 'AskYouTube image')]
+
+
 ## Demo Video
-Watch the demo video here:
 
 [![AskYouTube demo](/demo%20screenhot.png 'AskYouTube demo')](https://youtu.be/M1zq9NKIcbw?t=54)
 
