@@ -48,6 +48,32 @@ source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
+At this stage, make sure you have set your OPENAI_API_KEY in your environment variables. If not, do so now.
+
+Setting an environmental variable is a way to provide specific information to a program or script that it needs to function properly. In this case, the program requires an environmental variable called OPENAI_API_KEY to be set in order to access a service provided by OpenAI.
+
+Here's how you can set the OPENAI_API_KEY environmental variable on different operating systems:
+
+For Windows:
+Open the Start menu and search for "Environment Variables" and select "Edit the system environment variables."
+In the System Properties window, click on the "Environment Variables" button.
+In the Environment Variables window, under "System Variables," click "New."
+In the "Variable Name" field, enter OPENAI_API_KEY.
+In the "Variable Value" field, paste your OpenAI API key.
+Click "OK" to save the changes.
+
+For macOS and Linux:
+Open a terminal window.
+Type the following command:
+```
+export OPENAI_API_KEY=your-api-key-here
+```
+
+Replace your-api-key-here with your actual OpenAI API key.
+Press Enter.
+
+After setting the environmental variable, you may need to restart your computer or terminal session for the changes to take effect. Once done, the program will be able to access the OpenAI service using the provided API key.
+
 4. Use the extension
 - To use the extension locally, you will need to first start the FastAPI server. Ensure the server is running for the extension to send requests to the API.
 
