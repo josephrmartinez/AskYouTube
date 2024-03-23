@@ -33,7 +33,7 @@ gpt-3.5-turbo-1106 with the 16k token context window is used by default for vide
 - Click "Load unpacked" on the upper left and select the "chrome-extension" folder from the local repository.
 - The AskYouTube extension should now appear in your list of 'All Extensions.' Copy the displayed ID (a string of random lower-case letters).
 
-3. Run the FastAPI Server
+3. Update the Chrome Extension ID
 - Open main.py in the fastapi-server folder.
 - Paste the extension ID into the allow_origins middleware:
 
@@ -41,10 +41,37 @@ gpt-3.5-turbo-1106 with the 16k token context window is used by default for vide
 
 - Save the main.py file.
 
-- Navigate to the fastapi-server folder. Create a virtual environment inside the fastapi-server folder, activate it, and install dependencies:
+4. Navigate to folder, activate virtual environment, set environmental variable:
+
+Open a terminal or command prompt window.
+
+Navigate to the fastapi-server folder within the downloaded repository. You can do this using the cd command. For example:
+
+```
+cd path/to/AskYouTube/fastapi-server
+```
+
+Once you're in the fastapi-server folder, activate the virtual environment. (This requires that you already have python3 installed on your machine). Create a virtual environment using the following command:
+
 ```
 python3 -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
+
+Then, activate the virtual environment:
+
+On macOS and Linux:
+```
+source venv/bin/activate
+```
+
+On Windows:
+```
+venv\Scripts\activate
+```
+
+With the virtual environment activated, install the required dependencies by running:
+
+```
 pip install -r requirements.txt
 ```
 
@@ -74,9 +101,19 @@ Press Enter.
 
 After setting the environmental variable, you may need to restart your computer or terminal session for the changes to take effect. Once done, the program will be able to access the OpenAI service using the provided API key.
 
-4. Use the extension
-- To use the extension locally, you will need to first start the FastAPI server. Ensure the server is running for the extension to send requests to the API.
 
-- For regular use, consider deploying the FastAPI server and updating the code to securely access your API endpoint.
+4. Run the FastAPI Server
 
+After installing the dependencies, you're ready to start the FastAPI server. Make sure you have uvicorn installed on your machine, then run the following command:
 
+```
+uvicorn main:app
+```
+
+This command uses Uvicorn, an ASGI server, to run the FastAPI application defined in main.py. 
+
+Once the server is running, you should see output indicating that the server has started and is listening for incoming connections. You can now leave the terminal window open to keep the server running.
+
+With the FastAPI server running, you can now use the Chrome extension locally. Ensure that the Chrome extension is installed and the server is running to enable communication between the extension and the API.
+
+That's it! You've successfully started the FastAPI server and can now use the extension locally. If you need to stop the server at any time, you can do so by pressing Ctrl + C in the terminal window where the server is running.
