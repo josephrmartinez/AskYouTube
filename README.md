@@ -41,7 +41,8 @@ gpt-3.5-turbo-1106 with the 16k token context window is used by default for vide
 
 - Save the main.py file.
 
-4. Navigate to folder, activate virtual environment, set environmental variable:
+
+4. Navigate to folder, activate virtual environment:
 
 Open a terminal or command prompt window.
 
@@ -75,7 +76,7 @@ With the virtual environment activated, install the required dependencies by run
 pip install -r requirements.txt
 ```
 
-At this stage, make sure you have set your OPENAI_API_KEY in your environment variables. If not, do so now.
+5. Set OPENAI_API_KEY in environmental variables:
 
 Setting an environmental variable is a way to provide specific information to a program or script that it needs to function properly. In this case, the program requires an environmental variable called OPENAI_API_KEY to be set in order to access a service provided by OpenAI.
 
@@ -102,7 +103,7 @@ Press Enter.
 After setting the environmental variable, you may need to restart your computer or terminal session for the changes to take effect. Once done, the program will be able to access the OpenAI service using the provided API key.
 
 
-4. Run the FastAPI Server
+6. Run the FastAPI Server
 
 After installing the dependencies, you're ready to start the FastAPI server. Make sure you have uvicorn installed on your machine, then run the following command:
 
